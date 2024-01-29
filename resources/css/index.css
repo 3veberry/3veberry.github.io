@@ -1,0 +1,160 @@
+
+body {
+    background-color: #F2F1F0;
+    margin: 0;
+}
+header {
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+header nav a {   
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+ul {
+    display: flex;
+    list-style: none;
+    
+}
+
+nav ul li {
+    padding: 0px 20px;
+}
+nav svg {
+    margin: 0 8px;
+}
+
+li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #8C8C8C;
+    transition: all .5s;
+
+}
+li a:hover::after {
+    width: 100%;
+}
+li a:active {
+    color: #fff
+}
+.pictures {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.dropdown {
+    position: relative;
+}
+.select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #000;
+    transition: 0.5s
+    
+}
+.caret-rotate {
+    transform: rotate(180deg);
+}
+
+.menu {
+    position: absolute;
+    background-color: #FFF;
+    border: 1px solid #8C8C8C;
+    padding-left: 0;
+    display: none;
+    
+    
+}
+.menu-open {
+    display: inline;
+    
+}
+.menu li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+/*Koniec sekcji nawigacyjnej */
+
+.container {
+    
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 250px;
+    gap: 30px;
+    
+
+}
+.container div {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 16px solid #fff;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
+}
+.container img {
+    min-width: 100%;
+    height: 100%;
+    
+}
+.short {
+    grid-row: span 1;
+}
+.tall {
+    grid-row: span 2;
+}
+.container h3, .container p {
+    text-align: center;
+    
+}
+@media only screen and (max-width: 960px) {
+    .container{
+        grid-template-columns: 1fr 1fr;
+        max-width: 800px;
+    }
+    .pictures {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
+@media only screen and (max-width: 620px) {
+    .container {
+        grid-template-columns: 1fr;
+        margin: 20px, auto;
+        max-width: 400px;
+    }
+ul {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+nav ul li {
+    padding: 10px 10px;
+}
+nav ul li a svg {
+    visibility: hidden;
+}
+.menu{
+    width: 85px;
+}
+.menu li {
+    font-size: 12px;
+}
+}
